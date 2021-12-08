@@ -1,0 +1,15 @@
+{
+  "name": "toxikcalc",
+  "version": "1.0.0",
+  "description": "WDS Calculator rebuilt in svelte by Toxik",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo N/A",
+    "start": "electron ."
+  },
+  "author": "MaverickQuill55",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^16.0.4"
+  }
+}
