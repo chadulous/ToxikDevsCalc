@@ -1,4 +1,5 @@
-const { remote } = require('electron')
+const electron = require('electron')
+const { getCurrentWindow } = (electron.remote || electron)
 setInterval(() => {
-    console.log('size:', remote.getCurrentWindow().getSize());
+    console.log('size:', getCurrentWindow().getSize());
 }, 1000)

@@ -4,6 +4,14 @@ html, body {
 	height: 100%;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+	-webkit-app-region: drag;
+}
+
 body {
 	color: #333;
 	margin: 0;
@@ -38,6 +46,7 @@ input, button, select, textarea {
 	box-sizing: border-box;
 	border: 1px solid #ccc;
 	border-radius: 2px;
+	-webkit-app-region: no-drag;
 }
 
 input:disabled {

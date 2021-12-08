@@ -6,4 +6,4 @@ cd ..
 git add .
 git commit -am %1
 git push
-gh realease create %2 -n %1 ./electron/ToxikCalc-win32-x64.zip
+gh release create %2 -n %1 ./electron/ToxikCalc-win32-x64.zip

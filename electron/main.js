@@ -1,5 +1,4 @@
-require('update-electron-app')()
-const { app, BrowserWindow, autoUpdater, dialog } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const createWindow = ()=>{
     const win = new BrowserWindow({
         width: 400,
@@ -35,26 +34,3 @@ app.setUserTasks([
       description: ''
     }
 ])
-const url = `https://update.electronjs.org/maverick-dev-55/ToxikDevsCalc/${process.platform}-${process.arch}/${app.getVersion()}`
-
-autoUpdater.setFeedURL({ url })
-setInterval(() => {
-    autoUpdater.checkForUpdates()
-}, 60000)
-autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-    const dialogOpts = {
-      type: 'info',
-      buttons: ['Restart', 'Later'],
-      title: 'Application Update',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
-      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
-    }
-  
-    dialog.showMessageBox(dialogOpts).then((returnValue) => {
-      if (returnValue.response === 0) autoUpdater.quitAndInstall()
-    })
-})
-autoUpdater.on('error', message => {
-    console.error('There was a problem updating the application')
-    console.error(message)
-})
