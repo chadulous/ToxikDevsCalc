@@ -1,7 +1,7 @@
 {
   "name": "toxikcalc",
   "productName": "ToxikCalc",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "WDS Calculator rebuilt in svelte by Toxik",
   "main": "main.js",
   "scripts": {
@@ -13,5 +13,8 @@
   "devDependencies": {
     "electron": "^16.0.4",
     "electron-packager": "^15.4.0"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
   }
 }

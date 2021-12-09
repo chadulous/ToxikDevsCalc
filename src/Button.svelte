@@ -1,8 +1,9 @@
 <script lang="ts">
     export let span: boolean
     export let name: string
-    export let type: "number" | "operator" | "function.AC" | "function.DEL" | "function.EQ"
-    export let button = ''
+    export let type
+    export let button
+    console.log(type)
 </script>
 <svelte:options accessors></svelte:options>
 

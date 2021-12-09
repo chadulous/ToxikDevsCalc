@@ -2,7 +2,12 @@
 	import Button from "./Button.svelte";
 	import { onMount } from 'svelte';
 	class Calculator {
-		constructor(prevop, currop) {
+		prevop: string
+		currop: string
+		prevopte: HTMLElement
+		curropte: HTMLElement
+		operation: string
+		constructor(prevop: HTMLElement, currop: HTMLElement) {
 			this.prevopte = prevop
 			this.curropte = currop
 			this.currop = ''
@@ -52,7 +57,8 @@
 				default:
 					return
 			}
-			this.currop = computation
+			if(!isFinite(computation)) return
+			this.currop = computation.toString()
 			this.operation = ''
 			this.prevop = ''
 		}
@@ -64,7 +70,7 @@
 			if(isNaN(intdig)) {
 				intdis = ''
 			} else {
-				intdis = intdig.toLocaleString('en', { aximumFractionDigits: 0})
+				intdis = intdig.toLocaleString('en', { maximumFractionDigits: 0})
 			}
 			if(!isNaN(decdig)) {
 				return `${intdis}.${decdig}`
